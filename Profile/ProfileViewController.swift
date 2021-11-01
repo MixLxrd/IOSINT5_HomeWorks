@@ -20,9 +20,6 @@ class ProfileViewController: UIViewController {
         image.image = #imageLiteral(resourceName: "waiter")
         image.contentMode = .scaleToFill
         image.alpha = 0
-        
-        
-        
         image.toAutoLayout()
         return image
     }()
@@ -59,49 +56,17 @@ class ProfileViewController: UIViewController {
     
     @objc func tapUp() {
         print("avatar appear")
-        
-        
-        
         let someOffset = profileHeaderView.avatarImage.frame
         print(someOffset)
-        
-        
         view.addSubview(imageView)
-        
         imageView.frame = .init(x: someOffset.minX, y: someOffset.minY+20, width: someOffset.width, height: someOffset.height)
-        
         exampleLayout()
-        
         let newOffeset = fullSizeAvatar.frame
         print(newOffeset)
         UIView.animate(withDuration: 0.5) {
-            
-            //self.view.layoutIfNeeded()
-            //self.exampleLayout()
-            //self.newLayout()
             self.backgroundAvatar.alpha = 0.5
             self.fullSizeAvatar.alpha = 1
-            
-            //imageView.contentMode = .scaleAspectFit
             self.imageView.frame = newOffeset
-            /*
-             lazy var avatarImage: UIImageView = {
-             let image = UIImageView()
-             image.layer.borderWidth = 3
-             image.layer.cornerRadius = 50
-             image.clipsToBounds = true
-             image.layer.borderColor = UIColor.white.cgColor
-             image.image = #imageLiteral(resourceName: "waiter")
-             image.contentMode = .scaleToFill
-             
-             image.toAutoLayout()
-             return image
-             }()
-             */
-            //fullsize.translatesAutoresizingMaskIntoConstraints = true
-            
-            
-            
         }
         
         
@@ -171,7 +136,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
         view.backgroundColor = .lightGray
-        //setupLayout()
         
         setupTableView()
         
@@ -198,11 +162,9 @@ class ProfileViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         
-        let tapAvatar = UITapGestureRecognizer(target: self, action: #selector(tapUp))
-        profileHeaderView.avatarImage.addGestureRecognizer(tapAvatar)
-        profileHeaderView.avatarImage.isUserInteractionEnabled = true
-        
-        
+//        let tapAvatar = UITapGestureRecognizer(target: self, action: #selector(tapUp))
+//        profileHeaderView.avatarImage.addGestureRecognizer(tapAvatar)
+//        profileHeaderView.avatarImage.isUserInteractionEnabled = true
         NSLayoutConstraint.activate(constraints)
         
     }
