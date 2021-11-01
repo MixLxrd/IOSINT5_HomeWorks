@@ -9,6 +9,8 @@
 
 
 import UIKit
+import iOSIntPackage
+
 
 class PostTableViewCell: UITableViewCell {
     
@@ -37,7 +39,6 @@ class PostTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .systemGray
         label.numberOfLines = 0
-        //label.contentMode = .scaleAspectFit
         label.toAutoLayout()
         return label
     }()
